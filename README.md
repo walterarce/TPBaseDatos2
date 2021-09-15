@@ -1,4 +1,3 @@
-
 ## Trabajo Práctico - Fase 1
 Se necesita implementar una aplicación se seguimiento de proyectos, focalizado en la gestión de las personas participantes del mismo.
 
@@ -40,3 +39,4 @@ Ejecutar los distintos Stored Procedures
 Comparar los datos que quedan guardados en la base de datos con lo que debería haber
 
 Todas las acciones deben quedar en el branch develop - pueden usarse branches intermedios para trabajar.
+
