@@ -41,27 +41,27 @@ create index empleado_id_legajo_index
 
 alter table tp_base_datos_horarios.empleado modify id int auto_increment;
 
-create table tp_base_datos_horarios.proyecto
-(
-	proyecto_id int not null
-		primary key,
-	descripcion varchar(255) null,
-	cliente_id int null,
-	constraint proyecto_cliente_id_fk
-		foreign key (cliente_id) references tp_base_datos_horarios.cliente (id)
-);
-
 create table tp_base_datos_horarios.liquidacion_mensual
 (
 	id int auto_increment
 		primary key,
 	cliente_id int null,
 	proyecto_id int null,
+	descripcion varchar(255) null
+);
+
+create index liquidacion_mensual_clientes_id_fk
+	on tp_base_datos_horarios.liquidacion_mensual (cliente_id);
+
+create table tp_base_datos_horarios.proyecto
+(
+	proyecto_id int auto_increment
+		primary key,
 	descripcion varchar(255) null,
-	constraint liquidacion_mensual_clientes_id_fk
-		foreign key (cliente_id) references tp_base_datos_horarios.cliente (id),
-	constraint liquidacion_mensual_proyecto_proyecto_id_fk
-		foreign key (id) references tp_base_datos_horarios.proyecto (proyecto_id)
+	cliente_id int null,
+	estado char default 'A' null,
+	constraint proyecto_cliente_id_fk
+		foreign key (cliente_id) references tp_base_datos_horarios.cliente (id)
 );
 
 create table tp_base_datos_horarios.roles
@@ -88,18 +88,12 @@ create table tp_base_datos_horarios.tareas
 	descripcion varchar(255) null,
 	id_rendicion int null,
 	legajo_id int null,
+	estado char default 'A' null,
+	proyecto_id int null,
 	constraint tareas_empleado_legajo_fk
-		foreign key (legajo_id) references tp_base_datos_horarios.empleado (legajo)
-);
-
-create table tp_base_datos_horarios.proyecto_tareas
-(
-	id_proyecto int null,
-	id_tarea int null,
-	constraint proyecto_tareas_proyecto_proyecto_id_fk
-		foreign key (id_proyecto) references tp_base_datos_horarios.proyecto (proyecto_id),
-	constraint proyecto_tareas_tareas_id_fk
-		foreign key (id_tarea) references tp_base_datos_horarios.tareas (id)
+		foreign key (legajo_id) references tp_base_datos_horarios.empleado (legajo),
+	constraint tareas_proyecto_proyecto_id_fk
+		foreign key (proyecto_id) references tp_base_datos_horarios.proyecto (proyecto_id)
 );
 
 create table tp_base_datos_horarios.rendicion
