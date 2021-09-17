@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-
 # Trabajo Práctico - Fase 1
-=======
-## Trabajo Práctico - Fase 1
->>>>>>> 331361a36a70b9f2d064175c04e7854acbd228e5
+
 Se necesita implementar una aplicación se seguimiento de proyectos, focalizado en la gestión de las personas participantes del mismo.
 
 Al estar encargados de la creación y mantenimiento de la base de datos, como así también del desarrollo de la lógica de datos, se debe crear un modelo de datos, y proponer algunos puntos de acceso como stored procedures, y tener en cuenta restricciones de seguridad, rendimiento, etc.
