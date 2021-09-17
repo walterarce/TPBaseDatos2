@@ -1,9 +1,14 @@
+<<<<<<< HEAD
+
+# Trabajo Práctico - Fase 1
+=======
 ## Trabajo Práctico - Fase 1
+>>>>>>> 331361a36a70b9f2d064175c04e7854acbd228e5
 Se necesita implementar una aplicación se seguimiento de proyectos, focalizado en la gestión de las personas participantes del mismo.
 
 Al estar encargados de la creación y mantenimiento de la base de datos, como así también del desarrollo de la lógica de datos, se debe crear un modelo de datos, y proponer algunos puntos de acceso como stored procedures, y tener en cuenta restricciones de seguridad, rendimiento, etc.
 
-# Fase 1 - Entrega 20/9/2021
+## Fase 1 - Entrega 20/9/2021
 
 Conceptos/Entidades a tener en cuenta para diseñar la solución:
 
@@ -23,7 +28,8 @@ Cuando sea requerido, usuarios específicos pueden pedir una liquidación mensua
 
 Dado el ejemplo anterior, y también a pedido de ciertos usuarios, deberá haber un procedimiento de ajuste de horas cargadas a la fecha respecto a las liquidaciones hechas en lo que va del año. Este procedimiento generará una nueva liquidación relacionada a la original para ese mes sólamente con la diferencia entre lo ya liquidado y las horas asignadas. Por ejemplo, si para un proyecto se modifican cargas en un mes ya liquidado, se generará una liquidación que registre esa diferencia.
 
-
+### Modelo Relacional
+![Modelo Relacional](Desarrollo/Assets/rendicionhoras.jpg)
 Se debe entregar en un repositorio de GitHub:
 
 Creación del esquema de base de datos diseñado (en la carpeta DDL)
