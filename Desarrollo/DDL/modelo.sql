@@ -73,8 +73,9 @@ create table tp_base_datos_horarios.roles
 
 create table tp_base_datos_horarios.roles_empleados
 (
-	id_rol int null,
-	legajo_empleado int null,
+	id_rol int not null,
+	legajo_empleado int not null,
+	primary key (id_rol, legajo_empleado),
 	constraint roles_empleados_empleado_legajo_fk
 		foreign key (legajo_empleado) references tp_base_datos_horarios.empleado (legajo),
 	constraint roles_empleados_roles_id_fk
