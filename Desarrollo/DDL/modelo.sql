@@ -63,6 +63,7 @@ create table proyecto
 	descripcion varchar(255) null,
 	cliente_id int null,
 	estado char default 'A' null,
+	horas_asignadas_totales decimal(5,2) null,
 	constraint proyecto_cliente_id_fk
 		foreign key (cliente_id) references cliente (id)
 );
@@ -109,6 +110,7 @@ create table rendicion
 	horas decimal(5,2) null,
 	tipo_rendicion char null,
 	tarea_id int null,
+	fecharendicion datetime null,
 	constraint rendicion_tareas_id_fk
 		foreign key (tarea_id) references tareas (id)
 );
