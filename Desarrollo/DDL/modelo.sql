@@ -33,7 +33,8 @@ create table empleado
 	apellido varchar(200) null,
 	legajo int not null
 		primary key,
-	dni int null
+	dni int null,
+	tipo_rendicion char null
 );
 
 create index empleado_id_legajo_index
@@ -48,7 +49,7 @@ create table liquidacion_mensual
 	cliente_id int null,
 	proyecto_id int null,
 	descripcion varchar(255) null,
-	horas decimal null,
+	horas decimal(5,2) null,
 	fecha datetime null
 );
 
@@ -62,6 +63,7 @@ create table proyecto
 	descripcion varchar(255) null,
 	cliente_id int null,
 	estado char default 'A' null,
+	horas_asignadas_totales decimal(5,2) null,
 	constraint proyecto_cliente_id_fk
 		foreign key (cliente_id) references cliente (id)
 );
@@ -105,9 +107,10 @@ create table rendicion
 (
 	id int auto_increment
 		primary key,
-	horas decimal null,
+	horas decimal(5,2) null,
 	tipo_rendicion char null,
 	tarea_id int null,
+	fecharendicion datetime null,
 	constraint rendicion_tareas_id_fk
 		foreign key (tarea_id) references tareas (id)
 );
